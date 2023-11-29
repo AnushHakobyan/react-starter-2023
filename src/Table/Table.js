@@ -1,8 +1,14 @@
 
+const createOnClickHandler = (name) => {
+    return function f (e) {
+        console.log(name);
+    }
+}
 
 const Table = ({ columns, data }) => {
+
     return (
-        <table>
+        <table className="customTable">
             <thead>
                 <tr>
                     {
@@ -18,8 +24,8 @@ const Table = ({ columns, data }) => {
                         return (
                             <tr key={dataRow.id}>
                                 {
-                                    columns.map(({ key }) => (
-                                        <td key={dataRow[key]}>{dataRow[key]}</td>
+                                    columns.map(({ key, name }) => (
+                                        <td onClick={createOnClickHandler(name)} key={dataRow[key]}>{dataRow[key]}</td>
                                     ))
                                 }
                             </tr>

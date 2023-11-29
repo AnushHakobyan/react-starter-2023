@@ -1,6 +1,6 @@
 const Button = ({
     label,
-    onClick,
+    onClickHandler,
     type = 'button',
     variant = 'primary',
     className,
@@ -9,7 +9,7 @@ const Button = ({
         <button
             className={`button button-${variant} ${className}`}
             type={type}
-            onClick={onClick}
+            onClick={onClickHandler}
         >
             {label}
         </button>
