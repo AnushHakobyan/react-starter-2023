@@ -1,7 +1,9 @@
-import React, {useState} from 'react'; //hook
+import React, { useState, useContext } from 'react';
+import UserContext from '../UserContext/UserContext';
 import Table from "../Table/Table";
 import NewTransactionPanel from "./NewTransactionPanel";
 import NewTransactionForm from "./NewTransactionForm";
+
 
 const transactions = [
     {
@@ -39,6 +41,9 @@ const columns = [
 
 const Transactions = () => {
     const [isClicked, setIsClicked] = useState(false);
+    const user = useContext(UserContext);
+
+    console.log(user);
 
     return (
         <React.Fragment >
